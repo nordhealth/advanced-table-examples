@@ -1,0 +1,31 @@
+.n-resize-handle {
+  position: absolute;
+  z-index: 3;
+  inset-inline-end: 0;
+  inset-block: 0;
+  inline-size: var(--n-space-s);
+  cursor: col-resize;
+  user-select: none;
+  touch-action: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.n-resize-handle:focus {
+  outline: none;
+}
+
+.n-resize-handle-inner {
+  width: 2px;
+  background: var(--n-color-border);
+  height: var(--n-space-m);
+}
+
+.n-resize-handle:is(:hover, .is-resizing) .n-resize-handle-inner {
+  background: var(--n-color-border-hover);
+}
+
+.n-resize-handle:focus-visible .n-resize-handle-inner {
+  background-color: var(--n-color-accent);
+}

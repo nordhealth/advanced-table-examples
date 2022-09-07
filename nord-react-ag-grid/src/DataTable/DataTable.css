@@ -1,0 +1,3 @@
+nord-table [aria-sort]:not([aria-sort="none"]) {
+  color: var(--n-color-text);
+}

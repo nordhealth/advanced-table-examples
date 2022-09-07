@@ -1,0 +1,15 @@
+nord-table table {
+  table-layout: fixed;
+}
+
+nord-table th[aria-sort] {
+  cursor: pointer;
+}
+
+nord-table th[aria-sort]:not([aria-sort="none"]) {
+  color: var(--n-color-text);
+}
+
+nord-table.is-resizing * {
+  cursor: col-resize !important;
+}
