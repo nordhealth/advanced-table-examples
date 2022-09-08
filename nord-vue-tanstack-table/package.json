@@ -1,5 +1,11 @@
 {
-  "name": "vite-vue-typescript-starter",
+  "name": "nord-vue-tanstack-table",
+  "description": "An example of combining Nord Design System with Vue and Tanstack table",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nordhealth/advanced-table-examples"
+  },
   "private": true,
   "version": "0.0.0",
   "type": "module",
