@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { sort } = defineProps<{ sort: "asc" | "desc" | null | undefined }>();
+const { sort } = defineProps<{ sort?: "asc" | "desc" | null }>();
 
 const sortIconMap = {
   default: "interface-sort-small",
