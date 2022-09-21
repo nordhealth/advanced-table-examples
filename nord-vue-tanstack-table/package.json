@@ -15,8 +15,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@nordhealth/components": "^1.14.3",
-    "@nordhealth/css": "^1.4.1",
+    "@nordhealth/components": "latest",
+    "@nordhealth/css": "latest",
     "@tanstack/vue-table": "^8.5.11",
     "vue": "^3.2.37"
   },
