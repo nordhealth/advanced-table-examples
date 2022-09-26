@@ -8,5 +8,3 @@ import PayoutsTable from "./components/PayoutsTable.vue";
     <PayoutsTable />
   </nord-card>
 </template>
-
-<style scoped></style>

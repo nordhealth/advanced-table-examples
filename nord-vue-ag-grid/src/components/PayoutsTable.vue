@@ -2,44 +2,8 @@
 import { Data, data } from "./data.js";
 import DataTable from "./DataTable/DataTable.vue";
 
-const statusMap = {
-  success: "success",
-  alert: "danger",
-  warning: "warning",
-} as const;
-
-type Status = keyof typeof statusMap;
-
-const statusRenderer = ({ value }: { value: Status }) =>
-  `<nord-badge style="text-transform: capitalize" type="${statusMap[value]}">
-    ${value}
-  </nord-badge>`;
-
-const actionRenderer = () => `
-  <nord-dropdown size="s" position="block-end" align="end" style="display: inline-block; margin-block: -10px">
-  <nord-button slot="toggle" aria-describedby="tooltip" size="s">
-    <nord-icon
-      name="interface-menu-small"
-      color="var(--n-color-icon)"
-      label="Open menu"
-      size="s"
-      style="margin-top: 1px"
-    ></nord-icon>
-  </nord-button>
-  <nord-dropdown-group>
-    <nord-dropdown-item href="#">View payment details</nord-dropdown-item>
-    <nord-dropdown-item>Open in new tab</nord-dropdown-item>
-    <nord-dropdown-item>Copy link</nord-dropdown-item>
-  </nord-dropdown-group>
-  <nord-dropdown-group>
-    <nord-dropdown-item data-action="refund">Refund payment</nord-dropdown-item>
-    <nord-dropdown-item data-action="delete">
-      <span>Delete</span>
-      <nord-icon slot="end" name="interface-delete" size="s"></nord-icon>
-    </nord-dropdown-item>
-  </nord-dropdown-group>
-  </nord-dropdown>
-`;
+import PayoutActions from "./PayoutActions.vue";
+import PayoutStatus from "./PayoutStatus.vue";
 
 const dateFormatter = new Intl.DateTimeFormat("fi-FI", {
   year: "numeric",
@@ -67,7 +31,7 @@ const columns = [
   },
   {
     field: "status",
-    cellRenderer: statusRenderer,
+    cellRenderer: "statusCellRenderer",
     width: 125,
     minWidth: 125,
   },
@@ -87,7 +51,7 @@ const columns = [
     field: "actions",
     width: 80,
     minWidth: 80,
-    cellRenderer: actionRenderer,
+    cellRenderer: "actionsCellRenderer",
     type: "rightAligned",
     sortable: false,
   },
@@ -98,8 +62,18 @@ const defaultColumn = {
   sortable: true,
   minWidth: 100,
 };
+
+const components = {
+  actionsCellRenderer: PayoutActions,
+  statusCellRenderer: PayoutStatus,
+};
 </script>
 
 <template>
-  <DataTable :columns="columns" :data="data" :defaultColumn="defaultColumn" />
+  <DataTable
+    :columns="columns"
+    :data="data"
+    :defaultColumn="defaultColumn"
+    :components="components"
+  />
 </template>

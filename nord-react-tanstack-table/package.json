@@ -14,8 +14,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@nordhealth/css": "1.4.1",
-    "@nordhealth/react": "1.14.3",
+    "@nordhealth/css": "latest",
+    "@nordhealth/react": "latest",
     "@tanstack/react-table": "8.5.13",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"

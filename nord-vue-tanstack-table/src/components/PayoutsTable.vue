@@ -9,37 +9,7 @@ import {
 
 import { data, Data } from "./data.js";
 import DataTable from "./DataTable/DataTable.vue";
-
-function actions() {
-  return h(
-    "div",
-    { class: "n-table-actions" },
-    h("nord-dropdown", { position: "block-end", align: "end", size: "s" }, [
-      h(
-        "nord-button",
-        { slot: "toggle", "aria-describedby": "tooltip", size: "s" },
-        h("nord-icon", {
-          name: "interface-menu-small",
-          color: "var(--n-color-icon)",
-          label: "Open menu",
-          size: "s",
-        })
-      ),
-      h("nord-dropdown-group", [
-        h("nord-dropdown-item", { href: "#" }, "View payment details"),
-        h("nord-dropdown-item", "Open in new tab"),
-        h("nord-dropdown-item", "Copy link"),
-      ]),
-      h("nord-dropdown-group", [
-        h("nord-dropdown-item", "Refund payment"),
-        h("nord-dropdown-item", [
-          "Delete",
-          h("nord-icon", { slot: "end", name: "interface-delete", size: "s" }),
-        ]),
-      ]),
-    ])
-  );
-}
+import PayoutActions from "./PayoutActions.vue";
 
 const statusMap = {
   success: "success",
@@ -131,7 +101,7 @@ const columns = [
     size: 70,
     enableResizing: false,
     enableSorting: false,
-    cell: () => actions(),
+    cell: () => h(PayoutActions),
     meta: {
       style: {
         textAlign: "end",

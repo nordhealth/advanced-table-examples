@@ -6,9 +6,10 @@ import { GridOptions, GridReadyEvent } from "ag-grid-community";
 import { AgGridVue } from "ag-grid-vue3";
 import CustomHeader from "./CustomHeader.vue";
 
-const { columns, defaultColumn, data } = defineProps<{
+const { columns, defaultColumn, data, components } = defineProps<{
   columns: GridOptions["columnDefs"];
   defaultColumn: GridOptions["defaultColDef"];
+  components?: GridOptions["components"];
   data: any;
 }>();
 
@@ -16,8 +17,6 @@ const onGridReady = (params: GridReadyEvent) => {
   params.api.sizeColumnsToFit();
   params.api.setDomLayout("autoHeight");
 };
-
-const components = { agColumnHeader: CustomHeader };
 </script>
 
 <template>
@@ -26,7 +25,7 @@ const components = { agColumnHeader: CustomHeader };
       :columnDefs="columns"
       :defaultColDef="defaultColumn"
       :rowData="data"
-      :components="components"
+      :components="{ agColumnHeader: CustomHeader, ...components }"
       @grid-ready="onGridReady"
       :suppressRowTransform="true"
     />
