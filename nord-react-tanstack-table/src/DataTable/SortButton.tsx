@@ -14,7 +14,7 @@ export function SortButton<TData, TValue>({
   header: Header<TData, TValue>;
 }) {
   return (
-    <button className="n-sort-btn">
+    <button className="sort-btn">
       <Icon
         size="xs"
         color="currentColor"

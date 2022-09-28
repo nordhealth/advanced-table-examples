@@ -9,7 +9,7 @@ const sortIconMap = {
 </script>
 
 <template>
-  <button class="n-sort-btn">
+  <button class="sort-btn">
     <nord-icon
       size="xs"
       color="currentColor"
@@ -20,7 +20,7 @@ const sortIconMap = {
 </template>
 
 <style scoped>
-.n-sort-btn {
+.sort-btn {
   position: relative;
   cursor: pointer;
   border: none;
@@ -30,7 +30,7 @@ const sortIconMap = {
   padding: calc(var(--n-space-s) / 2);
 }
 
-[aria-sort]:hover .n-sort-btn::after {
+[aria-sort]:hover .sort-btn::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -39,12 +39,12 @@ const sortIconMap = {
   opacity: 0.05;
 }
 
-.n-sort-btn nord-icon {
+.sort-btn nord-icon {
   display: block;
   color: var(--n-color-icon);
 }
 
-[aria-sort]:not([aria-sort="none"]) .n-sort-btn nord-icon {
+[aria-sort]:not([aria-sort="none"]) .sort-btn nord-icon {
   color: var(--n-color-accent);
 }
 </style>

@@ -24,7 +24,7 @@ export function ResizeHandle({ header }: { header: Header<any, any> }) {
 
   return (
     <div
-      className={`n-resize-handle ${
+      className={`resize-handle ${
         header.column.getIsResizing() ? "is-resizing" : ""
       }`}
       role="separator"
@@ -36,7 +36,7 @@ export function ResizeHandle({ header }: { header: Header<any, any> }) {
       onClick={(e) => e.stopPropagation()}
       onDoubleClick={header.column.resetSize}
     >
-      <div className="n-resize-handle-inner" />
+      <div className="resize-handle-inner" />
     </div>
   );
 }

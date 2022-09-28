@@ -11,7 +11,7 @@ const { header } = defineProps<{
   <div
     v-if="header.column.getCanResize()"
     :class="{
-      'n-resize-handle': true,
+      'resize-handle': true,
       'is-resizing': header.column.getIsResizing(),
     }"
     role="separator"
@@ -25,12 +25,12 @@ const { header } = defineProps<{
     @keydown.right.prevent="updateColumnSizeBy(header, 10)"
     @keydown.esc="header.column.resetSize()"
   >
-    <div class="n-resize-handle-inner"></div>
+    <div class="resize-handle-inner"></div>
   </div>
 </template>
 
 <style scoped>
-.n-resize-handle {
+.resize-handle {
   position: absolute;
   z-index: 3;
   inset-inline-end: 0;
@@ -44,21 +44,21 @@ const { header } = defineProps<{
   justify-content: center;
 }
 
-.n-resize-handle:focus {
+.resize-handle:focus {
   outline: none;
 }
 
-.n-resize-handle-inner {
+.resize-handle-inner {
   width: 2px;
   background: var(--n-color-border);
   height: var(--n-space-m);
 }
 
-.n-resize-handle:is(:hover, .is-resizing) .n-resize-handle-inner {
+.resize-handle:is(:hover, .is-resizing) .resize-handle-inner {
   background: var(--n-color-border-hover);
 }
 
-.n-resize-handle:focus-visible .n-resize-handle-inner {
+.resize-handle:focus-visible .resize-handle-inner {
   background-color: var(--n-color-accent);
 }
 </style>

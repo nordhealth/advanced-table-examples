@@ -10,7 +10,7 @@ const sortIconMap = {
 
 export function SortButton({ sort }: { sort: ReturnType<Column["getSort"]> }) {
   return (
-    <button className="n-sort-btn">
+    <button className="sort-btn">
       <Icon
         size="xs"
         color="currentColor"

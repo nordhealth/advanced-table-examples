@@ -13,13 +13,13 @@ const status = props.params.value;
 </script>
 
 <template>
-  <nord-badge class="n-payout-badge" :type="statusMap[status]">
+  <nord-badge class="payout-badge" :type="statusMap[status]">
     {{ status }}
   </nord-badge>
 </template>
 
 <style>
-.n-payout-badge {
+.payout-badge {
   text-transform: capitalize;
 }
 </style>

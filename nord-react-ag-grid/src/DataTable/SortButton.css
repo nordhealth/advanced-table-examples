@@ -1,4 +1,4 @@
-.n-sort-btn {
+.sort-btn {
   position: relative;
   cursor: pointer;
   border: none;
@@ -8,16 +8,16 @@
   padding: calc(var(--n-space-s) / 2);
 }
 
-.n-sort-btn nord-icon {
+.sort-btn nord-icon {
   display: block;
   color: var(--n-color-icon);
 }
 
-[aria-sort]:not([aria-sort="none"]) .n-sort-btn nord-icon {
+[aria-sort]:not([aria-sort="none"]) .sort-btn nord-icon {
   color: var(--n-color-accent);
 }
 
-[aria-sort]:hover .n-sort-btn::after {
+[aria-sort]:hover .sort-btn::after {
   content: "";
   position: absolute;
   inset: 0;
