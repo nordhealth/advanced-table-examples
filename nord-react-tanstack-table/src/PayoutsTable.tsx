@@ -83,7 +83,7 @@ const columns = [
     size: 90,
     minSize: 90,
     cell: (props) => (
-      <Badge type={statusMap[props.getValue()]}>{props.getValue()}</Badge>
+      <Badge variant={statusMap[props.getValue()]}>{props.getValue()}</Badge>
     ),
     meta: {
       style: {
