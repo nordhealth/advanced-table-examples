@@ -2,7 +2,7 @@
 import type { Data } from "./data.js";
 import type { Badge } from "@nordhealth/components";
 
-const statusMap: Record<Data["status"], Badge["type"]> = {
+const statusMap: Record<Data["status"], Badge["variant"]> = {
   success: "success",
   alert: "danger",
   warning: "warning",
@@ -13,7 +13,7 @@ const status = props.params.value;
 </script>
 
 <template>
-  <nord-badge class="payout-badge" :type="statusMap[status]">
+  <nord-badge class="payout-badge" :variant="statusMap[status]">
     {{ status }}
   </nord-badge>
 </template>

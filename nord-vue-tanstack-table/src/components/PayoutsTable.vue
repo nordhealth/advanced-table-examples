@@ -46,7 +46,7 @@ const columns = [
     size: 90,
     minSize: 90,
     cell: (props) =>
-      h("nord-badge", { type: statusMap[props.getValue()] }, props.getValue()),
+      h("nord-badge", { variant: statusMap[props.getValue()] }, props.getValue()),
     meta: {
       style: {
         textTransform: "capitalize",

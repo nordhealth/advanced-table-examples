@@ -29,7 +29,7 @@ const statusMap = {
 } as const;
 
 const StatusRenderer = ({ value }: { value: Data["status"] }) => (
-  <Badge style={{ textTransform: "capitalize" }} type={statusMap[value]}>
+  <Badge style={{ textTransform: "capitalize" }} variant={statusMap[value]}>
     {value}
   </Badge>
 );
