@@ -1,4 +1,3 @@
-import { Icon } from "@nordhealth/react";
 import { Header } from "@tanstack/react-table";
 import "./SortButton.css";
 
@@ -15,12 +14,12 @@ export function SortButton<TData, TValue>({
 }) {
   return (
     <button className="sort-btn">
-      <Icon
+      <nord-icon
         size="xs"
         color="currentColor"
         name={sortIconMap[header.column.getIsSorted() || "default"]}
         label="Press to sort"
-      ></Icon>
+      ></nord-icon>
     </button>
   );
 }
