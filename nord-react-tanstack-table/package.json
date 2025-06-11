@@ -16,15 +16,15 @@
   "dependencies": {
     "@nordhealth/css": "latest",
     "@nordhealth/react": "latest",
-    "@tanstack/react-table": "8.5.13",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "@tanstack/react-table": "8.21.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "@vitejs/plugin-react": "^2.1.0",
-    "typescript": "^4.6.3",
-    "vite": "^3.1.4"
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.5.2",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
   }
 }
