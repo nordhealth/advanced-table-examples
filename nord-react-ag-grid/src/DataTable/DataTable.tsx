@@ -1,5 +1,11 @@
 import { AgGridReact } from "ag-grid-react";
-import { ColDef, GridReadyEvent } from "ag-grid-community";
+import {
+  ColDef,
+  GridReadyEvent,
+  ModuleRegistry,
+  AllCommunityModule,
+  provideGlobalGridOptions,
+} from "ag-grid-community";
 import "ag-grid-community/styles/ag-grid.css";
 import "@nordhealth/ag-theme-nord";
 import "./DataTable.css";
@@ -10,9 +16,15 @@ const components = {
   agColumnHeader: CustomHeader,
 };
 
+ModuleRegistry.registerModules([AllCommunityModule]);
+
+provideGlobalGridOptions({
+  theme: "legacy",
+});
+
 const onGridReady = (params: GridReadyEvent) => {
   params.api.sizeColumnsToFit();
-  params.api.setDomLayout("autoHeight");
+  params.api.setGridOption("domLayout", "autoHeight");
 };
 
 export function DataTable<TData>({
