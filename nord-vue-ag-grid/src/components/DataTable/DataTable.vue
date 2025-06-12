@@ -2,7 +2,13 @@
 import "ag-grid-community/styles/ag-grid.css";
 import "@nordhealth/ag-theme-nord";
 
-import { GridOptions, GridReadyEvent } from "ag-grid-community";
+import {
+  GridOptions,
+  GridReadyEvent,
+  ModuleRegistry,
+  AllCommunityModule,
+  provideGlobalGridOptions,
+} from "ag-grid-community";
 import { AgGridVue } from "ag-grid-vue3";
 import CustomHeader from "./CustomHeader.vue";
 
@@ -13,9 +19,15 @@ const { columns, defaultColumn, data, components } = defineProps<{
   data: any;
 }>();
 
+ModuleRegistry.registerModules([AllCommunityModule]);
+
+provideGlobalGridOptions({
+  theme: "legacy",
+});
+
 const onGridReady = (params: GridReadyEvent) => {
   params.api.sizeColumnsToFit();
-  params.api.setDomLayout("autoHeight");
+  params.api.setGridOption("domLayout", "autoHeight");
 };
 </script>
 
