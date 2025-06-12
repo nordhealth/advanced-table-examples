@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "@nordhealth/css";
+import "@nordhealth/components";
 
 import App from "./App";
 

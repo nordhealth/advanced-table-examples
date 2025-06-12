@@ -14,9 +14,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@nordhealth/components": "latest",
     "@nordhealth/ag-theme-nord": "latest",
     "@nordhealth/css": "latest",
-    "@nordhealth/react": "latest",
     "ag-grid-community": "33.3.2",
     "ag-grid-react": "33.3.2",
     "react": "^19.1.0",

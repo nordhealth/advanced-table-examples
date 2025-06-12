@@ -1,11 +1,3 @@
-import {
-  Badge,
-  Dropdown,
-  Button,
-  Icon,
-  DropdownGroup,
-  DropdownItem,
-} from "@nordhealth/react";
 import { ColDef } from "ag-grid-community";
 
 import { Data, data } from "./data.js";
@@ -29,39 +21,44 @@ const statusMap = {
 } as const;
 
 const StatusRenderer = ({ value }: { value: Data["status"] }) => (
-  <Badge style={{ textTransform: "capitalize" }} variant={statusMap[value]}>
+  <nord-badge
+    style={{ textTransform: "capitalize" }}
+    variant={statusMap[value]}
+  >
     {value}
-  </Badge>
+  </nord-badge>
 );
 
 const ActionDropdown = () => (
-  <Dropdown
+  <nord-dropdown
     size="s"
     position="block-end"
     align="end"
     style={{ display: "inline-block", marginBlock: -10 }}
   >
-    <Button slot="toggle" aria-describedby="tooltip" size="s">
-      <Icon
+    <nord-button slot="toggle" aria-describedby="tooltip" size="s">
+      <nord-icon
         name="interface-menu-small"
         color="var(--n-color-icon)"
         label="Open menu"
         size="s"
-      ></Icon>
-    </Button>
-    <DropdownGroup>
-      <DropdownItem href="#">View payment details</DropdownItem>
-      <DropdownItem>Open in new tab</DropdownItem>
-      <DropdownItem>Copy link</DropdownItem>
-    </DropdownGroup>
-    <DropdownGroup>
-      <DropdownItem data-action="refund">Refund payment</DropdownItem>
-      <DropdownItem data-action="delete">
+      ></nord-icon>
+    </nord-button>
+    <nord-dropdown-group>
+      <nord-dropdown-item href="#">View payment details</nord-dropdown-item>
+      <nord-dropdown-item>Open in new tab</nord-dropdown-item>
+      <nord-dropdown-item>Copy link</nord-dropdown-item>
+    </nord-dropdown-group>
+    <nord-dropdown-group>
+      <nord-dropdown-item data-action="refund">
+        Refund payment
+      </nord-dropdown-item>
+      <nord-dropdown-item data-action="delete">
         <span>Delete</span>
-        <Icon slot="end" name="interface-delete" size="s"></Icon>
-      </DropdownItem>
-    </DropdownGroup>
-  </Dropdown>
+        <nord-icon slot="end" name="interface-delete" size="s"></nord-icon>
+      </nord-dropdown-item>
+    </nord-dropdown-group>
+  </nord-dropdown>
 );
 
 const columns: ColDef<Data>[] = [
