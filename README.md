@@ -1,6 +1,6 @@
 # Nord Advanced Table Examples
 
-This repo includes examples in both Vue and React showing how to combine Tanstack table and AG Grid with Nord Design System, in order to build a table with sorting, resizable columns, draggable and re-orderable columns, plus sticky/pinned columns.
+This repo includes examples in both Vue and React showing how to combine TanStack Table and AG Grid with Nord Design System, in order to build a table with sorting, resizable columns, draggable and re-orderable columns, plus sticky/pinned columns.
 
 ## Learn More
 
@@ -16,4 +16,4 @@ If you experience any issues while getting started with any of Nord’s tools, p
 
 ## Copyright
 
-Copyright © 2022 Nordhealth Ltd.
+Copyright © 2025 Nordhealth Ltd.

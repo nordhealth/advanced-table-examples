@@ -12,6 +12,7 @@ export function CustomHeader({
   column,
   setSort,
   displayName,
+  api,
 }: IHeaderParams) {
   const textAlign =
     column.getColDef().type === "rightAligned" ? "end" : undefined;
@@ -23,6 +24,7 @@ export function CustomHeader({
         if (enableSorting) {
           const order = sortOrderMap[column.getSort() || "default"];
           setSort(order, event.shiftKey);
+          api.refreshHeader();
         }
       }}
     >

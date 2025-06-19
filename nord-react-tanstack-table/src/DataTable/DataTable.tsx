@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Table } from "@nordhealth/react";
 import { flexRender, Table as TanstackTable } from "@tanstack/react-table";
 
 import "./DataTable.css";
@@ -28,7 +27,7 @@ export function DataTable<TData>({ table }: { table: TanstackTable<TData> }) {
   usePreventSelection(isResizing);
 
   return (
-    <Table className={isResizing ? "is-resizing" : ""}>
+    <nord-table className={isResizing ? "is-resizing" : ""}>
       <table>
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
@@ -92,6 +91,6 @@ export function DataTable<TData>({ table }: { table: TanstackTable<TData> }) {
           ))}
         </tbody>
       </table>
-    </Table>
+    </nord-table>
   );
 }

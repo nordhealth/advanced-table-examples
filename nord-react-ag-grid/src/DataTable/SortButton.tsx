@@ -1,5 +1,4 @@
 import "./SortButton.css";
-import { Icon } from "@nordhealth/react";
 import { Column } from "ag-grid-community";
 
 const sortIconMap = {
@@ -11,12 +10,12 @@ const sortIconMap = {
 export function SortButton({ sort }: { sort: ReturnType<Column["getSort"]> }) {
   return (
     <button className="sort-btn">
-      <Icon
+      <nord-icon
         size="xs"
         color="currentColor"
         name={sortIconMap[sort || "default"]}
         label="Press to sort"
-      ></Icon>
+      ></nord-icon>
     </button>
   );
 }
